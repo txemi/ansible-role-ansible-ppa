@@ -12,3 +12,10 @@ def test_hosts_file(host):
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
+
+def test_ansible_exe(host):
+    f = host.file('/usr/bin/ansible')
+
+    assert f.exists
+    assert f.user == 'root'
+    assert f.group == 'root'
