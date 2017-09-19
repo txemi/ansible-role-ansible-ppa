@@ -19,4 +19,5 @@
   apt:
     pkg: ansible
     state: latest
+    #state: 2.2.1.0-1
   become: yes
