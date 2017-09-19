@@ -3,18 +3,20 @@
 ---
 # actualizamos ansible
 - name: ansible repo
-  apt_repository: 
-    #repo: "ppa:rquillo/ansible"
+  apt_repository:
+    # repo: "ppa:rquillo/ansible"
     repo: "ppa:ansible/ansible"
   become: yes
   when: true
+
 - name: apt update
-  apt: 
-    update_cache: yes 
-    cache_valid_time:   86400
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
   become: yes
+
 - name: ansible update
-  apt: 
-    pkg: ansible 
+  apt:
+    pkg: ansible
     state: latest
   become: yes
