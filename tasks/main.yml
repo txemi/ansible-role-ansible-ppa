@@ -1,7 +1,21 @@
-# preparar una máquina para desarrollar (java, maven...)
-
----
 # actualizamos ansible
+---
+
+- debug:
+    var: "ansible_distribution"
+
+- debug: 
+    var: "ansible_distribution_release"
+
+- debug:
+    var: "ansible_distribution_version"
+
+- name: install software-properties-common package
+  apt:                                              
+    pkg: software-properties-common
+    state: latest                                   
+  become: yes    
+
 - name: ansible repo
   apt_repository:
     # repo: "ppa:rquillo/ansible"
